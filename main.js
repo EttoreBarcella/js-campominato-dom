@@ -25,3 +25,13 @@ function bombGenerator(bombNumber, range) {
     return array;
 }
 
+function wichDiff(diff) {
+    let triesNumber;
+    if (diff === 0) {
+        return triesNumber = 100
+    } else if (diff === 1) {
+        return triesNumber = 80
+    } else {
+        return triesNumber = 50
+    }
+}
