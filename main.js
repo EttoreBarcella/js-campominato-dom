@@ -49,3 +49,25 @@ mineField(maxDifficultyRange, '.field')
 const bombs = bombGenerator(16, maxDifficultyRange)
 console.log(bombs)
 
+let userNumber
+const userChoice = []
+do {
+    do {
+        userNumber = Number(prompt('Inserisci un numero:'))
+    } while (isNaN(userNumber) || userNumber < 1 || userNumber > maxDifficultyRange)
+
+    if (!userChoice.includes(userNumber)) {
+        userChoice.push(userNumber)
+    }
+    document.getElementById(`${userNumber}`).className = 'box clear' 
+        if ((maxDifficultyRange - bombs.length) == userChoice.length) {
+        result.append(`Hai vinto! Il tuo punteggio e' ${userChoice.length}`)
+    }
+        
+} while (!bombs.includes(userNumber) && userChoice.includes(userNumber))
+
+document.getElementById(`${userNumber}`).className = 'box bomb'
+
+for (let i = 0; i < bombs.length; i++) {
+    document.getElementById(`${bombs[i]}`).className = 'box bomb'
+}
